@@ -8,31 +8,17 @@
 </head>
 <body>
     <h1>Welcome to Notes!</h1>
-    <form action="" method="post">
+    <form action="dataAcess/signup.php" method="post">
+        <h2>Sign Up</h2>
         <input type="text" placeholder="Email" name="email" required>
         <input type="password" placeholder="Senha" name="pass" required>
-        <button type="submit">Entrar</button>
+        <button type="submit">Sign Up</button>
     </form>
-    <?php
-        include_once 'conn.php';
-
-        if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['pass']) && !empty($_POST['pass'])) {
-            $email = $_POST['email'];
-            $pass = $_POST['pass'];
-        }
-
-        $insert = "INSERT INTO users (email, pass) VALUES ('$email', '$pass')";
-        $check = "SELECT (email) FROM users WHERE email = '$email'";
-
-        if ($conn->query($check)->num_rows > 0) {
-            echo "Erro ao registrar, esse usuário já pode estar registrado.";
-        } else {
-            if ($conn->query($insert)) {
-                echo "Registrado com sucesso!";
-            }
-        }
-        $conn->close();
-
-    ?>
+    <form action="dataAcess/login.php" method="post">
+        <h2>Login</h2>
+        <input type="text" placeholder="Email" name="email" required>
+        <input type="password" placeholder="Senha" name="pass" required>
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>

@@ -8,12 +8,19 @@ body {
 }
 
 form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
     gap: 1rem;
     padding: 1rem;
     border: 2px solid black;
     border-radius: 1rem;
+}
+
+.note {
+    width: fit-content;
+    max-width: 70vw;
+    word-wrap: break-word;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: .5rem;
+    background-color: yellow;
 }

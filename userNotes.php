@@ -7,8 +7,13 @@
     <title>Notes</title>
 </head>
 <body>
+    <a href="dataAcess/logoff.php">Logoff</a>
     <?php
         session_start();
+
+        if (empty($_SESSION['email'])){
+            header("Location: index.php");
+        }
 
         echo "<h1>" . $_SESSION['email'] . " Notes</h1>";
     ?>

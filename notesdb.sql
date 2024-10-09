@@ -14,4 +14,5 @@ create table notes(
 );
 
 select * from users;
+select * from notes;
 drop database notesdb;

@@ -15,6 +15,12 @@ form {
     border-radius: 1rem;
 }
 
+#inputNewNote {
+    display: flex;
+    flex-direction: row;
+    gap: .1rem;
+}
+
 .note {
     width: fit-content;
     max-width: 70vw;

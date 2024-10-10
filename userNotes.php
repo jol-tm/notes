@@ -18,7 +18,7 @@
         echo "<h1 id='userTitle'>" . $_SESSION['email'] . " Notes</h1>";
     ?>
     <form id="inputNewNote" action="dataAcess/newNote.php" method="post">
-        <input type="text" name="noteContent" placeholder="Insert note here..." required><button>+</button>
+        <input max="255" type="text" name="noteContent" placeholder="Insert note here..." required><button>+</button>
         <form id="formNotes" action="dataAcess/notes.php" method="post">
     </form>
     <form action="" method="post">

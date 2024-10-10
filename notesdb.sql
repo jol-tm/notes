@@ -12,7 +12,3 @@ create table notes(
     owner varchar() not null,
     content varchar() not null
 );
-
-select * from users;
-select * from notes;
-drop database notesdb;

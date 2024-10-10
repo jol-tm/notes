@@ -15,12 +15,13 @@
             header("Location: index.php");
         }
 
-        echo "<h1>" . $_SESSION['email'] . " Notes</h1>";
+        echo "<h1 id='userTitle'>" . $_SESSION['email'] . " Notes</h1>";
     ?>
     <form id="inputNewNote" action="dataAcess/newNote.php" method="post">
-        <input type="text" name="noteContent" placeholder="Insert note here..."><button>+</button>
+        <input type="text" name="noteContent" placeholder="Insert note here..." required><button>+</button>
         <form id="formNotes" action="dataAcess/notes.php" method="post">
     </form>
+    <form id="notes" action="" method="post">
         <?php
             include_once 'dataAcess/conn.php';
 
@@ -28,11 +29,12 @@
             $result = $conn->query($select);
             
             while ($fetch = mysqli_fetch_assoc($result)) {
-                echo "<div class='note'>" . $fetch['content'] . "</div>";
+                echo "<div class='note'>" . $fetch['content'] . "</a></div>";
             }
 
             $conn->close();
         ?>
+        </a>
     </form>
 </body>
 </html>

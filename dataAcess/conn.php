@@ -1,9 +1,9 @@
 <?php
 
     // Database connection parameters
-    $servername = "127.0.0.1:3316";
+    $servername = "127.0.0.1";
     $username = "root";
-    $password = "123456";
+    $password = "";
     $dbname = "notesdb";
 
     // Create a connection object

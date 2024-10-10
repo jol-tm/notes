@@ -21,20 +21,21 @@
         <input type="text" name="noteContent" placeholder="Insert note here..." required><button>+</button>
         <form id="formNotes" action="dataAcess/notes.php" method="post">
     </form>
-    <form id="notes" action="" method="post">
+    <form action="" method="post">
         <?php
             include_once 'dataAcess/conn.php';
 
-            $select = "SELECT content FROM notes WHERE owner = '$owner'";
+            $select = "SELECT content, id FROM notes WHERE owner = '$owner'";
             $result = $conn->query($select);
             
             while ($fetch = mysqli_fetch_assoc($result)) {
-                echo "<div class='note'>" . $fetch['content'] . "</a></div>";
+                $content = $fetch['content'];
+                $id = $fetch['id'];
+                echo "<div class='note'>$content<a class='deleteBtn' href='dataAcess/deleteNote.php?id=$id'>X</a></div>";
             }
 
             $conn->close();
         ?>
-        </a>
     </form>
 </body>
 </html>

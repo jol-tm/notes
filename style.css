@@ -9,7 +9,6 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 1rem;
     max-width: 90%;
     padding: 1rem;
@@ -27,20 +26,25 @@ input, button {
     font-size: 1rem;
 }
 
-#notes {
-    flex-direction: row;
-}
-
 #inputNewNote {
     flex-direction: row;
     border: none;
 }
 
 .note {
+    position: relative;
     word-wrap: break-word;
-    max-width: 90%;
     padding: 1rem;
     border: 2px solid black;
     border-radius: .5rem;
     background-color: yellow;
+}
+
+.deleteBtn {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    padding: .1rem;
+    color: crimson;
+    text-decoration: none;
 }
